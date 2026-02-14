@@ -7,7 +7,7 @@ Users can securely sign in with Google, save private bookmarks, and see updates 
 
 ## 🚀 Live Demo
 
-- 👉 [🔖 Smart Bookmark](https://smart-bookmark-website.vercel.app/)
+👉 [🔖 Smart Bookmark](https://smart-bookmark-website.vercel.app/)
 
 ---
 
