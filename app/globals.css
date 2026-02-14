@@ -1,26 +1,62 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 🌌 Animated Gradient Background */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply min-h-screen transition-colors duration-300;
+  background: linear-gradient(135deg, #020617, #0f172a, #020617);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+}
+
+html:not(.dark) body {
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0, #f8fafc);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🧊 Glassmorphism */
+.glass-card {
+  @apply backdrop-blur-xl bg-white/10 dark:bg-white/5
+  border border-white/20 dark:border-white/10
+  shadow-2xl rounded-2xl;
+}
+
+/* ✨ Skeleton Shimmer */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: #e2e8f0;
+  border-radius: 12px;
+}
+.dark .shimmer {
+  background: #1e293b;
+}
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
