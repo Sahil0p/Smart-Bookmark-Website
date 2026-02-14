@@ -37,8 +37,8 @@ Users can securely sign in with Google, save private bookmarks, and see updates 
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/smart-bookmark-app.git
-cd smart-bookmark-app
+git clone https://github.com/Sahil0p/Smart-Bookmark-Website
+cd Smart-Bookmark-Website
 ```
 
 ## 2️⃣ Install Dependencies
